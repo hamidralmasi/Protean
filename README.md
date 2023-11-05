@@ -68,5 +68,6 @@ In config.sh set NS3 to the path of the current directory. You can run a particu
 ./waf --run "protean-evaluation --DT_alpha=$DT_ALPHA --Protean_beta=$PROTEAN_BETA --per_packet_Protean=$PER_PACKET_PROTEAN --load=$LOAD --StartTime=$START_TIME --EndTime=$END_TIME --FlowLaunchEndTime=$FLOW_END_TIME --serverCount=$SERVERS --spineCount=$SPINES --leafCount=$LEAVES --linkCount=$LINKS --spineLeafCapacity=$LEAF_SPINE_CAP --leafServerCapacity=$SERVER_LEAF_CAP --linkLatency=$LATENCY --TcpProt=$TCP --BufferSize=$BUFFER --statBuf=$STATIC_BUFFER --algorithm=$ALG --RedMinTh=$RED_MIN --RedMaxTh=$RED_MAX --request=$BURST_SIZE --queryRequestRate=$BURST_FREQ --nPrior=$N_PRIO --alphasFile=$ALPHAFILE --cdfFileName=$CDFFILE --alphaUpdateInterval=$ALPHA_UPDATE_INT --fctOutFile=$FLOWFILE --torOutFile=$TORFILE --algOutFile=$ALGFILE --useMaxDqDt=$USE_MAX_DQDT --useNormalizedDqDt=$USE_NORMALIZED_DQDT --useMultiPrioThresh=$USE_MULTI_PRIO --buildup_thresh=$BUILDUP_THRESH --proteanAlphasFile=$PROTEAN_ALPHAFILE"; echo "$FLOWFILE")&
 ```
 
-Some example evaluation scenarios can be found in [`examples/Protean/run-ALL.sh`](https://github.com/hamidralmasi/Protean/tree/master/examples/Protean/run-All.sh)
+Some example evaluation scenarios can be found in [`examples/Protean/run-ALL.sh`](https://github.com/hamidralmasi/Protean/blob/master/examples/Protean/run-ALL.sh)
+
 
