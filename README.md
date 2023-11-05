@@ -9,6 +9,7 @@ This folder contains the implementation of the [Protean]([https://arxiv.org/abs/
 1) [Building ns-3](#building-ns-3)
 2) [Running Protean](#running-protean)
 3) [Input Evaluation Parameters](#input-evaluation-parameters)
+4) [Parsing the Results](#parsing-the-results)
 
 
 
@@ -113,7 +114,6 @@ Some example evaluation scenarios can be found in [`examples/Protean/run-ALL.sh`
 | `printDelay` | printDelay in NanoSeconds |
 | `alphaUpdateInterval` | (Number of Rtts) update interval for alpha values |
 | `fctOutFile` | File path for FCTs |
-| `algOutFile` | File path for FCTs |
 | `torOutFile` | File path for ToR statistic |
 | `rto` | min Retransmission timeout value in MicroSeconds |
 | `torPrintall` | torPrintall |
@@ -125,3 +125,20 @@ Some example evaluation scenarios can be found in [`examples/Protean/run-ALL.sh`
 | `useNormalizedDqDt` | use DqDt/Sum(DqDt) for positive ones instead of raw DqDt |
 | `useMultiPrioThresh` | use smaller buildup threshold with multiple priorities |
 | `useHighPrioShorts` | prioritize short flows |
+
+## Parsing the Results
+
+To read and parse the output files such as `fctOutFile` you can pass corresponding parameters to `results.sh` script which in turn calculated the desired evaluation metrics.
+
+## Citation
+```bib
+@INPROCEEDINGS{10229046,
+  author={Almasi, Hamidreza and Vardekar, Rohan and Vamanan, Balajee},
+  booktitle={IEEE INFOCOM 2023 - IEEE Conference on Computer Communications}, 
+  title={Protean: Adaptive Management of Shared-Memory in Datacenter Switches}, 
+  year={2023},
+  pages={1-10},
+  doi={10.1109/INFOCOM53939.2023.10229046}}
+```
+
+Correspondence to: Hamidreza Almasi <halmas3@uic.edu>.
