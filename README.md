@@ -65,43 +65,62 @@ Protean evaluation is added as simulation files and scripts in [`examples/Protea
 In config.sh set NS3 to the path of the current directory. You can run a particular evaluation scenario by setting the desired parameters to `protean-evaluation.cc` with this command:
 
 ```shell
-./waf --run "protean-evaluation \
---DT_alpha=$DT_ALPHA \
---Protean_beta=$PROTEAN_BETA \
---per_packet_Protean=$PER_PACKET_PROTEAN \
---load=$LOAD \
---StartTime=$START_TIME \
---EndTime=$END_TIME \
---FlowLaunchEndTime=$FLOW_END_TIME \
---serverCount=$SERVERS \
---spineCount=$SPINES \
---leafCount=$LEAVES \
---linkCount=$LINKS \
---spineLeafCapacity=$LEAF_SPINE_CAP \
---leafServerCapacity=$SERVER_LEAF_CAP \
---linkLatency=$LATENCY \
---TcpProt=$TCP \
---BufferSize=$BUFFER \
---statBuf=$STATIC_BUFFER \
---algorithm=$ALG \
---RedMinTh=$RED_MIN \
---RedMaxTh=$RED_MAX \
---request=$BURST_SIZE \
---queryRequestRate=$BURST_FREQ \
---nPrior=$N_PRIO \
---alphasFile=$ALPHAFILE \
---cdfFileName=$CDFFILE \
---alphaUpdateInterval=$ALPHA_UPDATE_INT \
---fctOutFile=$FLOWFILE \
---torOutFile=$TORFILE \
---algOutFile=$ALGFILE \
---useMaxDqDt=$USE_MAX_DQDT \
---useNormalizedDqDt=$USE_NORMALIZED_DQDT \
---useMultiPrioThresh=$USE_MULTI_PRIO \
---buildup_thresh=$BUILDUP_THRESH \
---proteanAlphasFile=$PROTEAN_ALPHAFILE"; echo "$FLOWFILE"
+./waf --run "protean-evaluation --DT_alpha=$DT_ALPHA --Protean_beta=$PROTEAN_BETA \
+--per_packet_Protean=$PER_PACKET_PROTEAN --load=$LOAD --StartTime=$START_TIME --EndTime=$END_TIME \
+--FlowLaunchEndTime=$FLOW_END_TIME --serverCount=$SERVERS --spineCount=$SPINES \
+--leafCount=$LEAVES --linkCount=$LINKS --spineLeafCapacity=$LEAF_SPINE_CAP --leafServerCapacity=$SERVER_LEAF_CAP \
+--linkLatency=$LATENCY --TcpProt=$TCP --BufferSize=$BUFFER --statBuf=$STATIC_BUFFER --algorithm=$ALG \
+--RedMinTh=$RED_MIN --RedMaxTh=$RED_MAX --request=$BURST_SIZE --queryRequestRate=$BURST_FREQ \
+--nPrior=$N_PRIO --alphasFile=$ALPHAFILE --cdfFileName=$CDFFILE --alphaUpdateInterval=$ALPHA_UPDATE_INT \
+--fctOutFile=$FLOWFILE --torOutFile=$TORFILE --algOutFile=$ALGFILE \
+--useMaxDqDt=$USE_MAX_DQDT --useNormalizedDqDt=$USE_NORMALIZED_DQDT \
+--useMultiPrioThresh=$USE_MULTI_PRIO --buildup_thresh=$BUILDUP_THRESH --proteanAlphasFile=$PROTEAN_ALPHAFILE"; echo "$FLOWFILE"
 ```
 
 Some example evaluation scenarios can be found in [`examples/Protean/run-ALL.sh`](https://github.com/hamidralmasi/Protean/blob/master/examples/Protean/run-ALL.sh)
 
+## Input Parameters for protean-evaluation.cc
 
+| Parameter | Description |
+|-----------|-------------|
+| `StartTime` | Start time of the simulation |
+| `EndTime` | End time of the simulation |
+| `FlowLaunchEndTime` | End time of the flow launch period |
+| `randomSeed` | Random seed, 0 for random generated |
+| `load` | Load of the network, 0.0 - 1.0 |
+| `serverCount` | The Server count |
+| `spineCount` | The Spine count |
+| `leafCount` | The Leaf count |
+| `linkCount` | The Link count |
+| `spineLeafCapacity` | Spine <-> Leaf capacity in Gbps |
+| `leafServerCapacity` | Leaf <-> Server capacity in Gbps |
+| `linkLatency` | linkLatency in microseconds |
+| `TcpProt` | Tcp protocol |
+| `BufferSize` | BufferSize in Bytes |
+| `statBuf` | staticBuffer in fraction of Total buffersize |
+| `algorithm` | Buffer Management algorithm |
+| `RedMinTh` | Min Threshold for RED in packets |
+| `RedMaxTh` | Max Threshold for RED in packets |
+| `UseEcn` | Ecn Enabled |
+| `request` | Query Size in Bytes |
+| `queryRequestRate` | Query request rate (poisson arrivals) |
+| `nPrior` | number of priorities |
+| `alphasFile` | alpha values file (should be exactly nPrior lines) |
+| `proteanAlphasFile` | Protean alpha values file (should be exactly nPrior lines) |
+| `cdfFileName` | File name for flow distribution |
+| `cdfName` | Name for flow distribution |
+| `printDelay` | printDelay in NanoSeconds |
+| `alphaUpdateInterval` | (Number of Rtts) update interval for alpha values |
+| `fctOutFile` | File path for FCTs |
+| `algOutFile` | File path for FCTs |
+| `torOutFile` | File path for ToR statistic |
+| `rto` | min Retransmission timeout value in MicroSeconds |
+| `torPrintall` | torPrintall |
+| `DT_alpha` | alpha parameter in Dynamic Threshold |
+| `Protean_beta` | beta parameter in Protean EWMA |
+| `buildup_thresh` | Threshold for queue buildup |
+| `per_packet_Protean` | whether Protean calculations should be based on packets and unit time (as opposed to bytes and absolute time) |
+| `useMaxDqDt` | use Max(Dq/Dt s) instead of EWMA |
+| `useNormalizedDqDt` | use DqDt/Sum(DqDt) for positive ones instead of raw DqDt |
+| `useMultiPrioThresh` | use smaller buildup threshold with multiple priorities |
+| `useHighPrioShorts` | prioritize short flows |
