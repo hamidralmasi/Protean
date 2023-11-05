@@ -8,6 +8,7 @@ This folder contains the implementation of the [Protean]([https://arxiv.org/abs/
 
 1) [Building ns-3](#building-ns-3)
 2) [Running Protean](#running-protean)
+3) [Input Evaluation Parameters](#input-parameters)
 
 
 
@@ -79,7 +80,7 @@ In config.sh set NS3 to the path of the current directory. You can run a particu
 
 Some example evaluation scenarios can be found in [`examples/Protean/run-ALL.sh`](https://github.com/hamidralmasi/Protean/blob/master/examples/Protean/run-ALL.sh)
 
-## Input Parameters for protean-evaluation.cc
+## Input Evaluation Parameters
 
 | Parameter | Description |
 |-----------|-------------|
