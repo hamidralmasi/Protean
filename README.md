@@ -1,7 +1,7 @@
 
 Protean
 ================================
-This folder contains the implementation of the [Protean]([https://arxiv.org/abs/2302.05865](https://ieeexplore.ieee.org/document/10229046)) on The Network Simulator, Version 3.
+This folder contains the implementation of the [Protean](https://ieeexplore.ieee.org/document/10229046) on The Network Simulator, Version 3.
 
 ## Table of Contents:
 
