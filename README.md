@@ -122,7 +122,7 @@ Some example evaluation scenarios can be found in [`examples/Protean/run-ALL.sh`
 
 ## Parsing the Results
 
-To read and parse the output files such as `fctOutFile` you can pass corresponding parameters to `results.sh` script which in turn calculated the desired evaluation metrics.
+To read and parse the output files such as `fctOutFile` you can pass corresponding parameters to `results.sh` script which in turn calculates the desired evaluation metrics.
 
 ## Citation
 ```bib
