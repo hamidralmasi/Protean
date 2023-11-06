@@ -40,12 +40,6 @@ followed by
 in the directory which contains this README file. The files
 built will be copied in the build/ directory.
 
-The current codebase is expected to build and run on the
-set of platforms listed in the [release notes](RELEASE_NOTES)
-file.
-
-Other platforms may or may not work: we welcome patches to
-improve the portability of the code to these other platforms.
 
 ## Running Protean
 
